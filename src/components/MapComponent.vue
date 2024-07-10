@@ -49,7 +49,7 @@ async function fetchSensores() {
         sensores.forEach(sensor => {
             const icon = createIcon(sensor.color_icon); // Usa a cor do ícone fornecida pelo backend
             const marker = L.marker([sensor.latitude, sensor.logitude], { icon }).addTo(initialMap.value);
-            marker.bindPopup(`<b>ID: ${sensor.id}</b><br>IP: ${sensor.ip}<br>Última distância em cm: ${sensor.last_distance}`).openPopup();
+            marker.bindPopup(`<b>${sensor.nome}</b><br>Endereço: ${sensor.address}<br>Cidade: ${sensor.city}</b><br><b>Última distância em cm: ${sensor.last_distance}</b>`).openPopup();
         });
     } catch (error) {
         console.error('Erro ao buscar sensores:', error);
