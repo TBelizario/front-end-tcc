@@ -3,19 +3,17 @@
         <table class="w-full text-sm">
             <thead class="bg-zinc-600">
                 <tr class="">
-                    <th class="text-md px-6 py-3 text-center rounded-l-xl">IP</th>
-                    <th class="text-md px-6 py-3">Logitude</th>
-                    <th class="text-md px-6 py-3">Latitude</th>
+                    <th class="text-md px-6 py-3 text-center rounded-l-xl">Nome do sensor</th>
+                    <th class="text-md px-6 py-3">Endereço</th>
                     <th class="text-md px-6 py-3">Ativo</th>
-                    <th class="text-md px-6 py-3">Ações</th>
+                    <th class="text-md px-6 py-3">Alterar niveis</th>
                     <th class="text-md px-6 py-3 rounded-r-xl">Histórico</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-zinc-400">
                 <tr v-for="sensor in sensores" :key="sensor.id">
-                    <td class="text-center">{{ sensor.ip }}</td>
-                    <td class="text-center">{{ sensor.logitude }}</td>
-                    <td class="text-center">{{ sensor.latitude }}</td>
+                    <td class="text-center">{{ sensor.nome }}</td>
+                    <td class="text-center">{{ sensor.address }} , {{ sensor.city }}</td>
                     <td class="text-center">
                         <span class="inline-block w-3 h-3 rounded-full"
                             v-bind:class="{ 'bg-green-500': sensor.active, 'bg-red-500': !sensor.active }"></span>
